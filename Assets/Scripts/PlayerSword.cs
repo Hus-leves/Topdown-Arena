@@ -1,20 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerSword : MonoBehaviour
+public class PlayerSword : Sword
 {
-    public GameObject sword;
-    public Camera cam;
-    public float angleOffset;
 
-
-    void Update()
+    protected override void Update()
     {
-        Vector2 mouse = Mouse.current.position.ReadValue();
-        Vector3 world = cam.ScreenToWorldPoint(mouse);
-        Vector2 dir = world - transform.position;
+        base.Update();
+        if (Input.GetKey(KeyCode.Mouse0))
+            swing = true;
+        else
+            swing = false;
+    }
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + angleOffset;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    protected override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
     }
 }
