@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5a5c9294f0f0c43a131d3d3868c999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletScript
-  damage: 30
+  damage: 20
 --- !u!58 &6289368961413979764
 CircleCollider2D:
   m_ObjectHideFlags: 0

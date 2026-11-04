@@ -5,16 +5,18 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Sword
+  - HpImage
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Sword
   - 
   - 
   - 

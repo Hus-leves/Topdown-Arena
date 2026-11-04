@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public abstract class BaseEnemy : MonoBehaviour, IDamagable
@@ -8,21 +9,24 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
         melee,
         ranged
     }
-    public float hp;
+    public float maxHp;
     public float attackCooldown;
     public float attackRange;
     public float moveSpeed = 0.5f;
     public bool canAttack;
+    public GameObject hpBar;
     public GameObject target;
     public attackType dropdown = new attackType();
 
 
+    private float hp;
     private float cd;
     public abstract void Attack();
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        hp = maxHp;
     }
 
     protected virtual void Update()
@@ -31,6 +35,10 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * side;
         transform.localScale = scale;
+        
+        Vector3 hpscale = hpBar.transform.localScale;
+        hpBar.transform.localScale = hpscale;
+        
 
         if (Vector3.Distance(transform.position, target.transform.position) <= attackRange)
         {
@@ -52,6 +60,7 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
     public void TakeDamage(float amount)
     {
         hp -= amount;
+        hpBar.transform.localScale = new Vector3(0.245f * (hp / maxHp), transform.localScale.y, transform.localScale.z);
         if (hp <= 0f)
         {
             Destroy(gameObject);

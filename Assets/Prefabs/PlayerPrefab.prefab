@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2256455906003240624}
   - component: {fileID: 8278950993409403211}
   - component: {fileID: 1196706995809042372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9044a96dcaa2c7e47859ea03e090e52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSword
-  cam: {fileID: 0}
-  size: 0.5
 --- !u!114 &2256455906003240624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +253,7 @@ MonoBehaviour:
   coolDown: 1.5
   abilityImage: {fileID: 0}
   objectToInstantiate: {fileID: 3072858425053790249, guid: bb6df4de41fa2f2468161ea192d34cdb, type: 3}
+  damage: 50
   fireballSpeed: 10
 --- !u!114 &1196706995809042372
 MonoBehaviour:
@@ -281,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5724318942684288665}
   - component: {fileID: 6889385831306865476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5293444478665990944}
   - component: {fileID: 8779876084418491526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,9 +464,9 @@ GameObject:
   - component: {fileID: 5430400216568297651}
   - component: {fileID: 6518973613181140068}
   - component: {fileID: 2120199401804068969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,8 +502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSword
   damage: 10
   downPos: -50
-  upPos: 80
-  swingTime: 0.2
+  upPos: 360
+  swingTime: 0.3
   coolDown: 0.5
   swing: 0
 --- !u!61 &6518973613181140068
