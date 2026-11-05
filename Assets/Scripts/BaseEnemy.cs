@@ -60,7 +60,7 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
     public void TakeDamage(float amount)
     {
         hp -= amount;
-        hpBar.transform.localScale = new Vector3(0.245f * (hp / maxHp), transform.localScale.y, transform.localScale.z);
+        hpBar.transform.localScale = new Vector3(0.245f * (hp / maxHp), 0.3075f, 1f);
         if (hp <= 0f)
         {
             Destroy(gameObject);
