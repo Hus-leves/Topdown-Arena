@@ -11,7 +11,7 @@ public class RangedEnemy : BaseEnemy
     {
         Vector2 dir = target.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
+        self.transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         base.Update();
     }
 

@@ -8,15 +8,7 @@ public class Spawner : MonoBehaviour
 
     public float spawnTimer = 0.2f;
 
-
     private float timer;
-
-
-    /*private void Start()
-    {
-        Instantiate(Player, new Vector2(0, 0), Quaternion.identity);
-    }*/
-
     private void Update()
     {
         if (timer <= 0f)
@@ -36,8 +28,5 @@ public class Spawner : MonoBehaviour
         float y = Random.Range(box.bounds.min.y, box.bounds.max.y);
         
         Instantiate(enemies[enemy], new Vector2(x, y), Quaternion.identity);
-
     }
-
-
 }

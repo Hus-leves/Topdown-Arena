@@ -16,6 +16,7 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
     public bool canAttack;
     public GameObject hpBar;
     public GameObject target;
+    public GameObject self;
     public attackType dropdown = new attackType();
 
 
@@ -31,10 +32,10 @@ public abstract class BaseEnemy : MonoBehaviour, IDamagable
 
     protected virtual void Update()
     {
-        float side = target.transform.position.x > transform.position.x ? 1f : -1f;
-        Vector3 scale = transform.localScale;
+        float side = target.transform.position.x > self.transform.position.x ? 1f : -1f;
+        Vector3 scale = self.transform.localScale;
         scale.x = Mathf.Abs(scale.x) * side;
-        transform.localScale = scale;
+        self.transform.localScale = scale;
         
         Vector3 hpscale = hpBar.transform.localScale;
         hpBar.transform.localScale = hpscale;

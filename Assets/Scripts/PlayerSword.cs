@@ -14,6 +14,10 @@ public class PlayerSword : Sword
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
+        if (other.tag == "Enemy")
+        {
+            base.OnTriggerEnter2D(other);
+
+        }
     }
 }
